@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Użytkowników</title>
+</head>
+
+<body>
+    <h1>Lista Użytkowników</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Imię i Nazwisko</th>
+                <th>Pełne Dane Adresowe</th>
+                <th>Aktywny link do strony WWW</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{firstName}} {{lastName}}</td>
+                <td>{{address}}</td>
+                <td>
+                    {{#if isActive}}
+                    <a href="{{website}}" target="_blank">Strona WWW</a>
+                    {{else}}
+                    <a href="https://www.google.pl/?hl=pl" target="_blank">Google</a>
+                    {{/if}}
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>
